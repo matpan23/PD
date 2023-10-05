@@ -11,15 +11,15 @@ public class RegistroServer {
         Socket socket = null;
         System.out.println("In attesa...");
         try{
-            ServerSocket serversocket = new ServerSocket(3330);
+            ServerSocket serverSocket = new ServerSocket(3330);
             while(true){
-                socket = serversocket.accept();
+                socket = serverSocket.accept();
                 ObjectInputStream instream = new ObjectInputStream(socket.getInputStream());
                 RecordRegister record = (RecordRegister) instream.readObject();
-                if(record.getIndirizzo()!=null){
+                if(record.getIndirizzo()!=null){ //scrittura in HashMap
                     hash.put(record.getNome(), record);
                 }
-                else {
+                else { //ricerca in HashMap
                     RecordRegister res = hash.get(record.getNome());
                     ObjectOutputStream outstream = new ObjectOutputStream(socket.getOutputStream());
                     outstream.writeObject(res);
@@ -35,8 +35,7 @@ public class RegistroServer {
             t.printStackTrace();
         }
         finally{
-            try{
-                socket.close();
+            try{ socket.close();
             }catch(IOException e){
                 e.printStackTrace();
                 System.exit(0);

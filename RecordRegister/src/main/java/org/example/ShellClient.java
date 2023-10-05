@@ -15,40 +15,31 @@ public class ShellClient {
                     System.out.println ("Inserire i dati.");
                     String nome = ask("Nome:");
                     String indirizzo = ask ("Indirizzo:");
-                    RecordRegister r = new RecordRegister(
-                            nome, indirizzo);
-                    Socket socket = new Socket (host, 7000);
-                    ObjectOutputStream sock_out = new
-                            ObjectOutputStream
-                            (socket.getOutputStream());
+                    RecordRegister r = new RecordRegister(nome, indirizzo);
+                    Socket socket = new Socket (host, 3330);
+                    ObjectOutputStream sock_out = new ObjectOutputStream(socket.getOutputStream());
                     sock_out.writeObject(r);
                     sock_out.flush();
                     socket.close();
                 }else if(cmd.equals ("cerca")) {
                     System.out.println ("Inserire il nome per la ricerca.");
-                            String nome = ask("Nome:");
-                    RecordRegister r = new RecordRegister(nome,
-                            null);
-                    Socket socket = new Socket (host, 7000);
-                    ObjectOutputStream sock_out = new
-                            ObjectOutputStream(socket.getOutputStream());
+                    String nome = ask("Nome:");
+                    RecordRegister r = new RecordRegister(nome,null);
+                    Socket socket = new Socket (host, 3330);
+                    ObjectOutputStream sock_out = new ObjectOutputStream(socket.getOutputStream());
                     sock_out.writeObject(r);
                     sock_out.flush();
-                    ObjectInputStream sock_in = new
-                            ObjectInputStream(socket.getInputStream());
-                    RecordRegister result = (RecordRegister)
-                            sock_in.readObject();
+                    ObjectInputStream sock_in = new ObjectInputStream(socket.getInputStream());
+                    RecordRegister result = (RecordRegister) sock_in.readObject();
                     if(result !=null)
-                        System.out.println ("Indirizzo:"+
-                                result.getIndirizzo());
+                        System.out.println ("Indirizzo:"+ result.getIndirizzo());
                     else
                         System.out.println ("Record assente");
                     socket.close();
                 }else System.out.println (ERRORMSG);
             }
         }catch(Throwable t) {
-            logger.severe("Lanciata Throwable:"+
-                    t.getMessage());
+            logger.severe("Lanciata Throwable:"+ t.getMessage());
             t.printStackTrace();
         } System.out.println ("Bye bye");
     }
