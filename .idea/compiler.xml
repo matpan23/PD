@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="HelloName" />
         <module name="RecordRegister" />
+        <module name="Thread" />
       </profile>
     </annotationProcessing>
   </component>

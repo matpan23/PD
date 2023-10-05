@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/HelloName/HelloName.iml" filepath="$PROJECT_DIR$/HelloName/HelloName.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/PD.iml" filepath="$PROJECT_DIR$/.idea/PD.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RecordRegister/RecordRegister.iml" filepath="$PROJECT_DIR$/RecordRegister/RecordRegister.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Thread.iml" filepath="$PROJECT_DIR$/Thread.iml" />
     </modules>
   </component>
 </project>

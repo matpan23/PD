@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/HelloName/pom.xml" />
         <option value="$PROJECT_DIR$/RecordRegister/pom.xml" />
+        <option value="$PROJECT_DIR$/Thread/pom.xml" />
       </list>
     </option>
   </component>
