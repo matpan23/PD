@@ -17,9 +17,7 @@ public class Deadlock {
             }
         }
         public void bowBack(Friend bower) {
-            synchronized (STATIC_LOCK) {
-                System.out.format("%s:%s has bowed back to me!%n", this.name, bower.getName());
-            }
+            System.out.format("%s:%s has bowed back to me!%n", this.name, bower.getName());
         }
     }
     public static void main(String[] args){
