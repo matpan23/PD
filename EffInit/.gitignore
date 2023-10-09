@@ -36,9 +36,3 @@ build/
 
 ### Mac OS ###
 .DS_Store
-
-/HelloName/src/test/
-/RecordRegister/src/test/
-Thread/src/test/
-Deadlock/src/test/
-EffInit/src/test
