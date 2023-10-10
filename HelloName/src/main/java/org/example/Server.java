@@ -20,11 +20,9 @@ public class Server {
             outs.writeObject("Hello "+nome);
             socket.close();
         } catch (EOFException e) {
-            logger.severe("Problemi con la connessione: "+ e.getMessage());
-            e.printStackTrace();
+            logger.severe("Problemi con la connessione: " + e.getMessage());
         } catch (Throwable t){
-            logger.severe("Lanciata Throwable: "+ t.getMessage());
-            t.printStackTrace();
+            logger.severe("Lanciata Throwable: " + t.getMessage());
         }
     }
 }
